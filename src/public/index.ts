@@ -1,6 +1,6 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-import {Component, View, bootstrap, coreDirectives} from 'angular2/angular2';
+import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {AccordionDemo} from 'src/components/demo/accordion-demo';
 import {AlertDemo} from 'src/components/demo/alert-demo';
@@ -38,7 +38,7 @@ import {TooltipDemo} from 'src/components/demo/tooltip-demo';
     PaginationDemo, ProgressbarDemo,
     RatingDemo,
     TabsDemo, TooltipDemo,
-    coreDirectives
+    CORE_DIRECTIVES
   ]
 })
 export class Home {

@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
-import {Component, View, bootstrap, coreDirectives} from 'angular2/angular2';
+import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {Collapse} from 'src/components/collapse/collapse';
 
@@ -20,7 +20,7 @@ import {Collapse} from 'src/components/collapse/collapse';
       </div>
     </div>
   `,
-  directives: [Collapse, coreDirectives]
+  directives: [Collapse, CORE_DIRECTIVES]
 })
 export class CollapseDemo {
   public isCollapsed:boolean = false;

@@ -1,8 +1,8 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
 import {Component, View, bootstrap,
-  CSSClass, NgStyle,
-  coreDirectives, formDirectives} from 'angular2/angular2';
+  NgClass, NgStyle,
+  CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 
 import {Rating} from 'src/components/rating/rating';
 
@@ -16,7 +16,7 @@ import {Rating} from 'src/components/rating/rating';
     <div>
       <h4>Default</h4>
       <rating [(ng-model)]="rate" [max]="max" [readonly]="isReadonly" (on-hover)="hoveringOver($event)" (on-leave)="test($event)" [titles]="['one','two','three']" ></rating>
-      <span class="label" [class]="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" [ng-style]="{display: (overStar && !isReadonly) ? 'inline' : 'none'}">{{percent}}%</span>
+      <span class="label" [ng-class]="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" [ng-style]="{display: (overStar && !isReadonly) ? 'inline' : 'none'}">{{percent}}%</span>
 
       <pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
 
@@ -32,7 +32,7 @@ import {Rating} from 'src/components/rating/rating';
         <rating [(ng-model)]="y" [rating-states]="ratingStates"></rating> <b>(<i>Rate:</i> {{y}})</b></div>
     </div>
   `,
-  directives: [Rating, CSSClass, NgStyle, formDirectives, coreDirectives]
+  directives: [Rating, NgClass, NgStyle, FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 export class RatingDemo {
   private x = 5;

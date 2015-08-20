@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
-import {Component, View, bootstrap, coreDirectives} from 'angular2/angular2';
+import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {dropdown} from 'src/components/dropdown/index';
 
@@ -109,7 +109,7 @@ import {dropdown} from 'src/components/dropdown/index';
         </script>
     </div>
   `,
-  directives: [dropdown, coreDirectives]
+  directives: [dropdown, CORE_DIRECTIVES]
 })
 export class DropdownDemo {
   disabled = false;

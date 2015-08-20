@@ -5,7 +5,7 @@ import {
   LifecycleEvent, EventEmitter,
   ElementRef,
   DefaultValueAccessor,
-  coreDirectives, CSSClass,
+  CORE_DIRECTIVES, NgClass,
   Self, NgModel, Renderer,
   ViewEncapsulation, ViewRef,
   ViewContainerRef, TemplateRef, NgFor, ComponentRef
@@ -48,20 +48,20 @@ const paginationConfig = {
 })
 @View({
   template: `
-  <ul class="pagination" [class]="classMap">
-    <li [class]="{disabled: noPrevious()||disabled, hidden: !boundaryLinks}" class="pagination-first">
+  <ul class="pagination" [ng-class]="classMap">
+    <li [ng-class]="{disabled: noPrevious()||disabled, hidden: !boundaryLinks}" class="pagination-first">
       <a href (click)="selectPage(1, $event)">{{getText('first')}}</a></li>
 
-    <li [class]="{disabled: noPrevious()||disabled, hidden: !directionLinks}" class="pagination-prev"><a href (click)="selectPage(page - 1, $event)">{{getText('previous')}}</a></li>
+    <li [ng-class]="{disabled: noPrevious()||disabled, hidden: !directionLinks}" class="pagination-prev"><a href (click)="selectPage(page - 1, $event)">{{getText('previous')}}</a></li>
 
-    <li *ng-for="#page of pages" [class]="{active: page.active, disabled: disabled&&!page.active}" class="pagination-page"><a href (click)="selectPage(page.number, $event)">{{page.text}}</a></li>
+    <li *ng-for="#page of pages" [ng-class]="{active: page.active, disabled: disabled&&!page.active}" class="pagination-page"><a href (click)="selectPage(page.number, $event)">{{page.text}}</a></li>
 
-    <li [class]="{disabled: noNext()||disabled, hidden: !directionLinks}" class="pagination-next"><a href (click)="selectPage(page + 1, $event)">{{getText('next')}}</a></li>
+    <li [ng-class]="{disabled: noNext()||disabled, hidden: !directionLinks}" class="pagination-next"><a href (click)="selectPage(page + 1, $event)">{{getText('next')}}</a></li>
 
-    <li [class]="{disabled: noNext()||disabled, hidden: !boundaryLinks}" class="pagination-last"><a href (click)="selectPage(totalPages, $event)">{{getText('last')}}</a></li>
+    <li [ng-class]="{disabled: noNext()||disabled, hidden: !boundaryLinks}" class="pagination-last"><a href (click)="selectPage(totalPages, $event)">{{getText('last')}}</a></li>
   </ul>
   `,
-  directives: [coreDirectives, CSSClass],
+  directives: [CORE_DIRECTIVES, NgClass],
   encapsulation: ViewEncapsulation.NONE
 })
 export class Pagination extends DefaultValueAccessor {
@@ -257,11 +257,11 @@ const pagerConfig = {
 @View({
   template: `
     <ul class="pager">
-      <li [class]="{disabled: noPrevious(), previous: align}"><a href (click)="selectPage(page - 1, $event)">{{getText('previous')}}</a></li>
-      <li [class]="{disabled: noNext(), next: align}"><a href (click)="selectPage(page + 1, $event)">{{getText('next')}}</a></li>
+      <li [ng-class]="{disabled: noPrevious(), previous: align}"><a href (click)="selectPage(page - 1, $event)">{{getText('previous')}}</a></li>
+      <li [ng-class]="{disabled: noNext(), next: align}"><a href (click)="selectPage(page + 1, $event)">{{getText('next')}}</a></li>
   </ul>
   `,
-  directives: [CSSClass]
+  directives: [NgClass]
 })
 export class Pager extends Pagination {
   constructor(@Self() cd:NgModel, renderer:Renderer, elementRef:ElementRef) {

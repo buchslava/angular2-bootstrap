@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
-import {Component, View, bootstrap, coreDirectives} from 'angular2/angular2';
+import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {Alert} from 'src/components/alert/alert';
 
@@ -17,7 +17,7 @@ import {Alert} from 'src/components/alert/alert';
     <div></div>
     <button type="button" class='btn btn-default' (click)="addAlert()">Add Alert</button>
   `,
-  directives: [Alert, coreDirectives]
+  directives: [Alert, CORE_DIRECTIVES]
 })
 export class AlertDemo {
   alerts:Array<Object>;

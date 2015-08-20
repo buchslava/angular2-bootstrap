@@ -4,7 +4,7 @@ import {
   Component, View,
   LifecycleEvent, EventEmitter,
   ElementRef, ViewContainerRef,
-  NgIf, CSSClass
+  NgIf, NgClass
 } from 'angular2/angular2';
 
 // TODO: templateUrl
@@ -16,7 +16,7 @@ import {
 })
 @View({
   template: `
-  <div class="alert" role="alert" [class]="classes" *ng-if="!closed">
+  <div class="alert" role="alert" [ng-class]="classes" *ng-if="!closed">
     <button *ng-if="closeable" type="button" class="close" (^click)="onClose($event)">
       <span aria-hidden="true">&times;</span>
       <span class="sr-only">Close</span>
@@ -24,7 +24,7 @@ import {
     <ng-content></ng-content>
   </div>
   `,
-  directives: [NgIf, CSSClass]
+  directives: [NgIf, NgClass]
 })
 export class Alert {
   type:string;

@@ -5,7 +5,7 @@ import {
   Component, View,
   LifecycleEvent, EventEmitter,
   ElementRef,
-  CSSClass, NgStyle,
+  NgClass, NgStyle,
   ViewRef, ViewContainerRef, TemplateRef,
   DynamicComponentLoader, ComponentRef,
   ViewEncapsulation
@@ -33,13 +33,13 @@ class TooltipOptions {
   template: `
     <div class="tooltip" role="tooltip"
      [ng-style]="{top: top, left: left, display: display}"
-     [class]="classMap" >
+     [ng-class]="classMap" >
       <div class="tooltip-arrow"></div>
       <div class="tooltip-inner">
         {{content}}
       </div>
     </div>`,
-  directives: [CSSClass, NgStyle],
+  directives: [NgClass, NgStyle],
   encapsulation: ViewEncapsulation.NONE
 })
 class TooltipContainer {

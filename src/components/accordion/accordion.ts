@@ -4,7 +4,7 @@ import {
   Component, View,
   Directive, LifecycleEvent,
   EventEmitter, ElementRef,
-  CSSClass, ViewContainerRef, TemplateRef
+  NgClass, ViewContainerRef, TemplateRef
 } from 'angular2/angular2';
 
 // todo: support template url
@@ -95,7 +95,7 @@ import {Collapse} from '../collapse/collapse';
       <h4 class="panel-title">
         <a href tabindex="0" class="accordion-toggle"
           (^click)="toggleOpen($event)">
-          <span [class]="{'text-muted': isDisabled}"
+          <span [ng-class]="{'text-muted': isDisabled}"
             [accordion-transclude]="headingTemplate">{{heading}}</span>
         </a>
       </h4>
@@ -107,7 +107,7 @@ import {Collapse} from '../collapse/collapse';
     </div>
   </div>
   `,
-  directives: [Collapse, AccordionTransclude, CSSClass]
+  directives: [Collapse, AccordionTransclude, NgClass]
 })
 export class AccordionGroup {
   private templateUrl:string;

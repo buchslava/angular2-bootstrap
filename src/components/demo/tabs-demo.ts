@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
-import {Component, View, bootstrap, coreDirectives} from 'angular2/angular2';
+import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {tabs} from 'src/components/tabs/tabs';
 
@@ -55,7 +55,7 @@ import {tabs} from 'src/components/tabs/tabs';
       </tabset>
     </div>
   `,
-  directives: [tabs, coreDirectives]
+  directives: [tabs, CORE_DIRECTIVES]
 })
 export class TabsDemo {
   private tabs:Array<any> = [

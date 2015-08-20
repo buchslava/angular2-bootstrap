@@ -5,9 +5,9 @@ import {
   Component, View, Directive,
   LifecycleEvent, EventEmitter,
   ElementRef, ViewContainerRef,
-  CSSClass, NgStyle, Host,
+  NgClass, NgStyle, Host,
   ViewEncapsulation,
-  coreDirectives
+  CORE_DIRECTIVES
 } from 'angular2/angular2';
 
 const progressConfig = {
@@ -79,7 +79,7 @@ export class Progress {
   <div class="progress-bar"
     style="min-width: 0;"
     role="progressbar"
-    [class]="type && 'progress-bar-' + type"
+    [ng-class]="type && 'progress-bar-' + type"
     [ng-style]="{width: (percent < 100 ? percent : 100) + '%', transition: transition}"
     aria-valuemin="0"
     [attr.aria-valuenow]="value"
@@ -87,7 +87,7 @@ export class Progress {
     [attr.aria-valuemax]="max"
     ><ng-content></ng-content></div>
 `,
-  directives: [NgStyle, CSSClass],
+  directives: [NgStyle, NgClass],
   encapsulation: ViewEncapsulation.NONE
 })
 export class Bar {

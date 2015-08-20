@@ -1,8 +1,8 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
 import {Component, View, bootstrap,
-  coreDirectives, formDirectives,
-  CSSClass
+  CORE_DIRECTIVES, FORM_DIRECTIVES,
+  NgClass
 } from 'angular2/angular2';
 
 import {accordion} from 'src/components/accordion/accordion';
@@ -45,14 +45,14 @@ import {accordion} from 'src/components/accordion/accordion';
         <accordion-group [is-open]="status.open">
             <template accordion-heading>
                 I can have markup, too! <i class="pull-right glyphicon"
-                [class]="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                [ng-class]="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
             </template>
             This is just some content to illustrate fancy headings.
         </accordion-group>
       </accordion>
     </div>
   `,
-  directives: [accordion, CSSClass, coreDirectives, formDirectives]
+  directives: [accordion, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 export class AccordionDemo {
   public oneAtATime:boolean = true;

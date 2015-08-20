@@ -15,7 +15,6 @@
   },
   "files": [
     "node_modules/typescript/bin/lib.dom.d.ts",
-    "typings/tsd.d.ts",
     "src/typings/es6-object.d.ts",
     "src/typings/ng2-custom.d.ts",
 

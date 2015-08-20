@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
-import {Component, View, bootstrap, coreDirectives} from 'angular2/angular2';
+import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {progressbar} from 'src/components/progressbar/progressbar';
 
@@ -38,7 +38,7 @@ import {progressbar} from 'src/components/progressbar/progressbar';
         </bs-progress>
     </div>
   `,
-  directives: [progressbar, coreDirectives]
+  directives: [progressbar, CORE_DIRECTIVES]
 })
 export class ProgressbarDemo {
   public max:number = 200;

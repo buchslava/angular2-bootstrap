@@ -2,7 +2,7 @@
 // todo: add pipe for checkResults | get values
 import {Component, View, bootstrap} from 'angular2/angular2';
 
-import {coreDirectives, formDirectives} from 'angular2/angular2';
+import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 
 
 import {ButtonCheckbox} from 'src/components/buttons/button-checkbox';
@@ -43,7 +43,7 @@ import {ButtonRadio} from 'src/components/buttons/button-radio';
 </div>
   `,
   directives: [
-    coreDirectives, formDirectives,
+    CORE_DIRECTIVES, FORM_DIRECTIVES,
     ButtonCheckbox, ButtonRadio
   ]
 })

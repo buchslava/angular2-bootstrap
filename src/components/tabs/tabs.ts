@@ -4,7 +4,7 @@ import {
   Component, View, Directive,
   LifecycleEvent, EventEmitter,
   ElementRef, TemplateRef,
-  coreDirectives, CSSClass
+  CORE_DIRECTIVES, NgClass
 } from 'angular2/angular2';
 
 import {NgTransclude} from '../common';
@@ -19,8 +19,8 @@ import {NgTransclude} from '../common';
 @View({
   template: `
     <div>
-      <ul class="nav" [class]="classMap">
-          <li *ng-for="#tabz of tabs" [class]="{active: tabz.active, disabled: tabz.disabled}">
+      <ul class="nav" [ng-class]="classMap">
+          <li *ng-for="#tabz of tabs" [ng-class]="{active: tabz.active, disabled: tabz.disabled}">
             <a href (^click)="tabz.active = true">
               <span  [ng-transclude]="tabz.headingRef">{{tabz.heading}}</span>
             </a>
@@ -31,7 +31,7 @@ import {NgTransclude} from '../common';
       </div>
     </div>
   `,
-  directives: [coreDirectives, CSSClass, NgTransclude]
+  directives: [CORE_DIRECTIVES, NgClass, NgTransclude]
 })
 export class Tabset {
   private vertical:boolean;

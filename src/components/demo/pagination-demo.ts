@@ -1,7 +1,7 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
 import {Component, View, bootstrap,
-  formDirectives, coreDirectives} from 'angular2/angular2';
+  FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {pagination} from 'src/components/pagination/pagination';
 
@@ -32,7 +32,7 @@ import {pagination} from 'src/components/pagination/pagination';
         <pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
     </div>
   `,
-  directives: [pagination, formDirectives, coreDirectives]
+  directives: [pagination, FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 export class PaginationDemo {
   private totalItems = 64;

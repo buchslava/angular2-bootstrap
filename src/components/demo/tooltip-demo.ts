@@ -1,7 +1,7 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
 import {Component, View, bootstrap,
-  coreDirectives, formDirectives, CSSClass
+  CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass
 } from 'angular2/angular2';
 
 import {tooltip} from 'src/components/tooltip/tooltip';
@@ -70,7 +70,7 @@ import {tooltip} from 'src/components/tooltip/tooltip';
         <span>Special Tooltip with <strong>markup</strong> and {{ dynamicTooltipText }}</span>
       </script>
   </div>`,
-  directives: [tooltip, coreDirectives, formDirectives, CSSClass],
+  directives: [tooltip, CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass],
   style: `
     /* Specify styling for tooltip contents */
     .tooltip.customClass .tooltip-inner {
